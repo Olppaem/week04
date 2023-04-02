@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>
+	#todo{
+		padding: 20px 20px;
+		margin: auto;
+		width: 75%;
+		background-color: orange;
+	}
+	#id{
+		padding: 20px 20px;
+	}
+</style>
+<script>
+	function addItem(){
+		let todo=document.getElementById("item");
+		let list=document.getElementById("todolist");
+		let listitem=document.createElement("li");
+		listitem.className=
+			"d-flex list-group-item list-group-item-action list-group-item-waring";
+		listitem.innerText=todo.value;
+		list.appendChild(listitem);
+		
+		todo.value="";
+		todo.focus();
+	}
+</script>
+<title>My ToDo App</title>
+</head>
+<body>
+	<div id="todo" >
+	<h2>My ToDo App</h2>
+	<hr>
+	<div class="input-group">
+		<input id="item" class="form-control" type="text" placeholder="할일을 입력하세요..." size="120">
+		<button type="button" class="btn btn-primary" onclick="addItem()">할일추가
+		</button>
+	</div>
+	<hr>
+	<ul id="todolist" class="list-group"></ul>
+	</div>
+</body>
+</html>
